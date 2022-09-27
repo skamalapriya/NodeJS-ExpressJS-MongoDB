@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link href = '/font/style.css' type = 'text/css' rel = 'stylesheet'>
+        <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    </head>
+    <body>
+        <h1>Aum Namah Shivayah!!</h1>
+        <h2>Thank you <%= FNAME %> <%= LNAME%></h2>
+        <script>
+            $.ajax({
+                type : 'POST',
+                url : '/loginjson',
+                data : JSON.stringify({ firstname : '<%= FNAME %>', lastname : '<%= LNAME %>'}),
+                dataType : 'json',
+                contentType : 'application/json' 
+            })
+        </script>
+    </body>
+</html>
